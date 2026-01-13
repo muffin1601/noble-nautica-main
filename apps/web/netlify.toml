@@ -1,7 +1,5 @@
 [build]
-
-  command = "npm install && npm run build"
-  publish = ".next"
+command = "npx turbo run build --filter=web"
 
 [[plugins]]
-  package = "@netlify/plugin-nextjs"
+package = "@netlify/plugin-nextjs"
