@@ -173,24 +173,33 @@ export default function ProductsPage() {
               ) : (
                 products.map((product) => (
                   <TableRow key={product.id}>
-                    <TableCell>
-                      <div className="flex items-center space-x-3">
-                        <Image unoptimized
-                          src={getProductImage(product)}
-                          alt={product.name}
-                          width={40}
-                          height={40}
-                          className="rounded-md object-cover"
-                        />
-                        <div>
-                          <div className="font-medium">{product.name}</div>
-                          <div className="text-sm text-muted-foreground">ID: {product.id}</div>
+                    <TableCell className="w-[30%]">
+                      <div className="flex flex-col gap-2">
+                        {/* Top row: Image + Name */}
+                        <div className="flex items-center gap-3">
+                          <Image
+                            unoptimized
+                            src={getProductImage(product)}
+                            alt={product.name}
+                            width={40}
+                            height={40}
+                            className="rounded-md object-cover border shrink-0"
+                          />
+
+                          <div className="min-w-0">
+                            <div className="font-medium truncate">
+                              {product.name}
+                            </div>
+                            <div className="text-xs text-muted-foreground">
+                              ID: {product.id}
+                            </div>
+                          </div>
                         </div>
 
-                        <div>
-                          <div className="font-medium">Description</div>
-                          <div className="text-sm text-muted-foreground"> {product.description}</div>
-                        </div>
+                        {/* Description */}
+                        <p className="text-xs text-muted-foreground line-clamp-3 leading-snug">
+                          {product.description}
+                        </p>
                       </div>
                     </TableCell>
                     <TableCell>{product.category}</TableCell>
