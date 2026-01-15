@@ -107,7 +107,7 @@ const Footer = () => {
 
               <div className='flex flex-col items-center lg:items-start pt-4 order-2 lg:order-1'>
                 <Image
-                  src="/whitelast.png"
+                  src="/whitelast-2.webp"
                   alt="Noble Nautica Logo"
                   width={500}
                   height={500}
